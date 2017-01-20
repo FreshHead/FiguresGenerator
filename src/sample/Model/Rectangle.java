@@ -11,7 +11,7 @@ public class Rectangle extends Figure {
 
   int width, height;
 
-  Rectangle() {
+  public Rectangle() {
     this(getRandomLength(), getRandomLength());
   }
 

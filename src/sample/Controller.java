@@ -17,14 +17,7 @@ import sample.Model.FigureFactory;
 public final class Controller {
 
 
-  public static final ObservableList<String> figureTypes =
-      FXCollections.observableArrayList(
-          "Круг",
-          "Эллипс",
-          "Квадрат",
-          "Прямоугольник",
-          "Линия"
-      );
+  public static final ObservableList<String> figureTypes = FXCollections.observableArrayList();
 
   public static ArrayList<Figure> figures = new ArrayList<>();
 
@@ -43,6 +36,7 @@ public final class Controller {
 
   @FXML
   private void initialize() {
+    figureTypes.addAll(FigureFactory.figuresMap.keySet());
     figuresTypeComboBox.setItems(figureTypes);
     moveToFlowPane.setVisible(false);
     setRadiusFlowPane.setVisible(false);

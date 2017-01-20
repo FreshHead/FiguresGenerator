@@ -9,7 +9,7 @@ import javafx.scene.canvas.GraphicsContext;
 public class Line extends Figure {
   Point2D endLocation;
 
-  Line() {
+  public Line() {
     this(getRandomPoint());
   }
 

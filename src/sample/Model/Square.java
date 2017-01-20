@@ -5,7 +5,7 @@ package sample.Model;
  */
 public class Square extends Rectangle {
 
-    Square () {
+    public Square() {
         this(getRandomLength());
     }
 

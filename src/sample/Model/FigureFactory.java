@@ -7,7 +7,7 @@ import java.util.HashMap;
  * Created by san on 1/18/17.
  */
 public final class FigureFactory {
-  static HashMap<String, String> figuresMap = new HashMap<>();
+  public static HashMap<String, String> figuresMap = new HashMap<>();
 
   static {
     figuresMap.put("Круг", "Circle");
