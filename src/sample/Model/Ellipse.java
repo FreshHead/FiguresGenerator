@@ -30,6 +30,11 @@ public class Ellipse extends Figure {
     gc.strokeOval(this.location.getX(), this.location.getY(), this.radius, this.secondRadius);
   }
 
+  @Override
+  public String toString() {
+    return super.toString() + " radius: " + radius + " secondRadius: " + secondRadius;
+  }
+
   public int getRadius() {
     return radius;
   }

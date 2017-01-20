@@ -25,8 +25,11 @@ public final class Controller {
           "Прямоугольник",
           "Линия"
       );
+
   public static ArrayList<Figure> figures = new ArrayList<>();
+
   ObservableList<String> figuresStringList = FXCollections.observableArrayList();
+
   Figure selectedFigure;
 
   @FXML
@@ -47,17 +50,19 @@ public final class Controller {
 
   @FXML
   private void createFigure() {
-    int countFromTextfield = Integer.parseInt(createCountTextField.getText());
-    if (countFromTextfield < 1) {
-      createCountTextField.setText(String.valueOf(countFromTextfield));
-      return;
+    if (figuresTypeComboBox.getValue() != null) {
+      int countFromTextfield = Integer.parseInt(createCountTextField.getText());
+      if (countFromTextfield < 1) {
+        createCountTextField.setText(String.valueOf(countFromTextfield));
+        return;
+      }
+      for (int i = countFromTextfield; i > 0; i--) {
+        Figure createdFigure = FigureFactory.createFigure(figuresTypeComboBox.getValue().toString());
+        figures.add(createdFigure);
+        createdFigure.draw(Main.gc);
+      }
+      populateFiguresComboBox();
     }
-    for (int i = countFromTextfield; i > 0; i--) {
-      Figure createdFigure = FigureFactory.createFigure(figuresTypeComboBox.getValue().toString());
-      figures.add(createdFigure);
-      createdFigure.draw(Main.gc);
-    }
-    populateFiguresComboBox();
   }
 
   private void populateFiguresComboBox() {

@@ -2,7 +2,6 @@ package sample.Model;
 
 import java.util.Random;
 
-import javafx.geometry.Point2D;
 import javafx.scene.canvas.GraphicsContext;
 
 /**
@@ -22,13 +21,18 @@ public class Rectangle extends Figure {
     this.height = height;
   }
 
+  static int getRandomLength() {
+    return new Random().nextInt(100) + 10;
+  }
+
   @Override
   public void draw(GraphicsContext gc) {
     gc.strokeRect(this.location.getX(), this.location.getY(), width, height);
   }
 
-  static int getRandomLength() {
-    return new Random().nextInt(100);
+  @Override
+  public String toString() {
+    return super.toString() + " width: " + width + " height: " + height;
   }
 
 }

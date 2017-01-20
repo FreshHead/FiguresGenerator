@@ -1,23 +1,41 @@
 package sample.Model;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
 
 /**
  * Created by san on 1/18/17.
  */
 public final class FigureFactory {
+  static HashMap<String, String> figuresMap = new HashMap<>();
+
+  static {
+    figuresMap.put("Круг", "Circle");
+    figuresMap.put("Эллипс", "Ellipse");
+    figuresMap.put("Квадрат", "Square");
+    figuresMap.put("Прямоугольник", "Rectangle");
+    figuresMap.put("Линия", "Line");
+  }
+
 
   public static Figure createFigure(String figureType) {
-    switch (figureType) {
-      case "Круг":
-        return new Circle();
-      case "Эллипс":
-        return new Ellipse();
-      case "Квадрат":
-        return new Square();
-      case "Прямоугольник":
-        return new Rectangle();
-      case "Линия":
-        return new Line();
+    try {
+      return (Figure) Class.forName(Figure.class.getCanonicalName().split(Figure.class.getSimpleName())[0] + figuresMap.get(figureType)).getConstructor().newInstance();
+    }
+    catch (InstantiationException e) {
+      e.printStackTrace();
+    }
+    catch (IllegalAccessException e) {
+      e.printStackTrace();
+    }
+    catch (InvocationTargetException e) {
+      e.printStackTrace();
+    }
+    catch (NoSuchMethodException e) {
+      e.printStackTrace();
+    }
+    catch (ClassNotFoundException e) {
+      e.printStackTrace();
     }
     return null;
   }

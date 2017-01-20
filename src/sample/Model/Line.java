@@ -28,4 +28,8 @@ public class Line extends Figure {
     gc.strokeLine(location.getX(), location.getY(), endLocation.getX(), endLocation.getY());
   }
 
+  @Override
+  public String toString() {
+    return super.toString() + " end x: " + endLocation.getX() + " end y: " + endLocation.getY();
+  }
 }

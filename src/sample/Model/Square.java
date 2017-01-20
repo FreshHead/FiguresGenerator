@@ -1,9 +1,5 @@
 package sample.Model;
 
-import javafx.scene.shape.*;
-
-import java.util.Random;
-
 /**
  * Created by Татьяна on 18.01.2017.
  */

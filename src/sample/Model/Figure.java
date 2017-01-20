@@ -30,4 +30,8 @@ public abstract class Figure{
 
   public abstract void draw(GraphicsContext gc);
 
+  public String toString() {
+    return this.getClass().getSimpleName() + " x: " + location.getX() + " y: " + location.getY();
+  }
+
 }
