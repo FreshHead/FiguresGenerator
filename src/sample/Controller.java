@@ -25,11 +25,8 @@ public final class Controller {
           "Прямоугольник",
           "Линия"
       );
-
-  ObservableList<String> figuresStringList = FXCollections.observableArrayList();
-
   public static ArrayList<Figure> figures = new ArrayList<>();
-
+  ObservableList<String> figuresStringList = FXCollections.observableArrayList();
   Figure selectedFigure;
 
   @FXML
@@ -112,10 +109,26 @@ public final class Controller {
 
   @FXML
   private void setRadiusOnPressed() {
-      ((Ellipse) selectedFigure).setRadius(
-          Integer.parseInt(radiusTextField.getText()),
-          Integer.parseInt(secondRadiusTextField.getText())
-      );
+    String stringRadius = radiusTextField.getText();
+    Integer radius;
+    if (!stringRadius.isEmpty()) {
+      radius = Integer.parseInt(stringRadius);
+    }
+    else {
+      radius = ((Ellipse) selectedFigure).getRadius();
+    }
+
+    String stringSecondRadius = secondRadiusTextField.getText();
+    Integer secondRadius;
+    if (!stringSecondRadius.isEmpty()) {
+      secondRadius = Integer.parseInt(stringSecondRadius);
+    }
+    else {
+      secondRadius = ((Ellipse) selectedFigure).getSecondRadius();
+    }
+
+    ((Ellipse) selectedFigure).setRadiuses(radius, secondRadius);
+    this.redraw();
   }
 
   private void redraw() {

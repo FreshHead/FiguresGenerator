@@ -1,10 +1,8 @@
 package sample.Model;
 
-import javafx.geometry.Point2D;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
-
 import java.util.Random;
+
+import javafx.scene.canvas.GraphicsContext;
 
 /**
  * Created by san on 1/17/17.
@@ -23,18 +21,26 @@ public class Ellipse extends Figure {
     this.secondRadius = secondRadius;
   }
 
+  static int getRandomRadius() {
+    return new Random().nextInt(100) + 10;
+  }
+
   @Override
   public void draw(GraphicsContext gc) {
     gc.strokeOval(this.location.getX(), this.location.getY(), this.radius, this.secondRadius);
   }
 
-  public void setRadius(int radius, int secondRadius) {
-    this.radius = radius;
-    this.secondRadius = secondRadius;
+  public int getRadius() {
+    return radius;
   }
 
-  static int getRandomRadius() {
-    return new Random().nextInt(100);
+  public int getSecondRadius() {
+    return secondRadius;
+  }
+
+  public void setRadiuses(int radius, int secondRadius) {
+    this.radius = radius;
+    this.secondRadius = secondRadius;
   }
 
 }

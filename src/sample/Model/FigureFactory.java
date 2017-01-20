@@ -1,8 +1,5 @@
 package sample.Model;
 
-import java.util.Random;
-
-import javafx.geometry.Point2D;
 
 /**
  * Created by san on 1/18/17.

@@ -13,7 +13,7 @@ public class Circle extends Ellipse {
     super(radius, radius);
   }
 
-  public void setRadius(int radius, int secondRadius) {
+  public void setRadiuses(int radius, int secondRadius) {
     this.radius = radius;
     this.secondRadius = radius;
   }
