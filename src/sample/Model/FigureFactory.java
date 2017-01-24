@@ -15,8 +15,8 @@ public final class FigureFactory {
     figuresMap.put("Квадрат", "Square");
     figuresMap.put("Прямоугольник", "Rectangle");
     figuresMap.put("Линия", "Line");
+    figuresMap.put("Случайная фигура", "RandomFigure");
   }
-
 
   public static Figure createFigure(String figureType) {
     try {

@@ -24,7 +24,7 @@ public abstract class Figure{
     return new Point2D(random.nextInt(700), random.nextInt(660));
   }
 
-  public void moveOn(Point2D shift) {
+  public void moveBy(Point2D shift) {
     this.location = this.location.add(shift);
   }
 

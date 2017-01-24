@@ -18,8 +18,8 @@ public class Line extends Figure {
     this.endLocation = endLocation;
   }
 
-  public void moveOn(Point2D shift) {
-    super.moveOn(shift);
+  public void moveBy(Point2D shift) {
+    super.moveBy(shift);
     endLocation = endLocation.add(shift);
   }
 
