@@ -20,11 +20,8 @@ public final class Controller {
   public static final ObservableList<String> figureTypes = FXCollections.observableArrayList();
 
   public static ArrayList<Figure> figures = new ArrayList<>();
-
+  public static Figure selectedFigure;
   ObservableList<String> figuresStringList = FXCollections.observableArrayList();
-
-  Figure selectedFigure;
-
   @FXML
   private FlowPane moveToFlowPane, setRadiusFlowPane;
 
@@ -40,7 +37,9 @@ public final class Controller {
     figuresTypeComboBox.setItems(figureTypes);
     moveToFlowPane.setVisible(false);
     setRadiusFlowPane.setVisible(false);
+
   }
+
 
   @FXML
   private void createFigure() {
