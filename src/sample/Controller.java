@@ -44,7 +44,7 @@ public final class Controller {
   @FXML
   private void createFigure() {
     if (figuresTypeComboBox.getValue() != null) {
-      int countFromTextfield = Integer.parseInt(createCountTextField.getText());
+      int countFromTextfield = createCountTextField.getText().isEmpty() ? 0 : Integer.parseInt(createCountTextField.getText());
       if (countFromTextfield < 1) {
         createCountTextField.setText(String.valueOf(countFromTextfield));
         return;
@@ -69,7 +69,7 @@ public final class Controller {
 
   @FXML
   private void selectFigure() {
-    if(!figures.isEmpty() && figuresComboBox.getValue() != null) {
+    if (!figures.isEmpty() && figuresComboBox.getValue() != null) {
       for (Figure figure : figures) {
         if (figure.toString().equals(figuresComboBox.getValue().toString())) {
           selectedFigure = figure;
@@ -98,9 +98,9 @@ public final class Controller {
 
   @FXML
   private void moveOnPressed() {
-    selectedFigure.moveBy(new Point2D(
-        Double.parseDouble(xMoveOnTextField.getText()),
-        Double.parseDouble(yMoveOnTextField.getText()))
+    selectedFigure.moveOn(new Point2D(
+        xMoveOnTextField.getText().isEmpty() ? 0 : Double.parseDouble(xMoveOnTextField.getText()),
+        yMoveOnTextField.getText().isEmpty() ? 0 : Double.parseDouble(yMoveOnTextField.getText()))
     );
     this.redraw();
   }
