@@ -1,4 +1,4 @@
-package sample.Model;
+package ru.univeralex.model;
 
 import java.util.Random;
 

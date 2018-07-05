@@ -1,4 +1,4 @@
-package sample.Model;
+package ru.univeralex.model;
 
 /**
  * Created by san on 1/17/17.

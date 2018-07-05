@@ -1,4 +1,4 @@
-package sample.Model;
+package ru.univeralex.model;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package sample;
+package ru.univeralex;
 
 import java.util.ArrayList;
 
@@ -9,10 +9,10 @@ import javafx.geometry.Point2D;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
-import sample.Model.Circle;
-import sample.Model.Ellipse;
-import sample.Model.Figure;
-import sample.Model.FigureFactory;
+import ru.univeralex.model.FigureFactory;
+import ru.univeralex.model.Circle;
+import ru.univeralex.model.Ellipse;
+import ru.univeralex.model.Figure;
 
 public final class Controller {
 
@@ -98,7 +98,7 @@ public final class Controller {
 
   @FXML
   private void moveOnPressed() {
-    selectedFigure.moveOn(new Point2D(
+    selectedFigure.moveBy(new Point2D(
         xMoveOnTextField.getText().isEmpty() ? 0 : Double.parseDouble(xMoveOnTextField.getText()),
         yMoveOnTextField.getText().isEmpty() ? 0 : Double.parseDouble(yMoveOnTextField.getText()))
     );

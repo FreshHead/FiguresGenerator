@@ -1,4 +1,4 @@
-package sample;
+package ru.univeralex;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -25,7 +25,7 @@ public class Main extends Application {
 
   @Override
   public void start(Stage primaryStage) throws Exception {
-    Parent fxmlParent = FXMLLoader.load(getClass().getResource("sample.fxml"));
+    Parent fxmlParent = FXMLLoader.load(getClass().getResource("gui.fxml"));
     Canvas canvas = new Canvas(900, 768);
     gc = canvas.getGraphicsContext2D();
     Group root = new Group(fxmlParent, canvas);
